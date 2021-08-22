@@ -1,6 +1,5 @@
 # comment
 # use / after directory
-target/
 .idea/
 # ignore files
 java-maniek-demo.iml/
