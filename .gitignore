@@ -1,5 +1,5 @@
 # comment
 # use / after directory
-.idea/
+.idea
 # ignore files
 java-maniek-demo.iml/
