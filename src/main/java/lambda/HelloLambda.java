@@ -30,7 +30,12 @@ Zad2 Wywolaj jeszcze raz metode handleRunner i przekaz do srodka - jeszcze raz o
                 System.out.println("Inside  method call (Zad 2)");
             }
         });
-    }
+
+/*
+Zad3 zamien popwyzsze wyolanie metodki handleRunner -> na lambde
+ */
+    handleRunner(() -> System.out.println("Inside lambda call (Zad 3)"));
+}
 /*
 Zad 1 Stworzmy metodke (publiczna statyczna), ktora przyjmie cos typu Runner i wywola metodke go()
  */
