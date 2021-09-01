@@ -1,5 +1,6 @@
 package lambda;
 
+@FunctionalInterface
 public interface Runner {
 
     void go();
