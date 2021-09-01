@@ -1,8 +1,8 @@
 package lambda;
 
 public interface Runner {
-    void go();
 
+    void go();
     default void go(int speed){
         System.out.println("current speed is " + speed);
     }
