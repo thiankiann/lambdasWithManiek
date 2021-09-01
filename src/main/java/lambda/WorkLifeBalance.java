@@ -1,9 +1,10 @@
 package lambda;
 
+@FunctionalInterface
 public interface WorkLifeBalance {
 
     void hardWork();
-    void sleep(int i);
+    default void sleep(int i) {}
 
     public static void main(String[] args) {
 //Zad.1 Napisz  klase anonimowa wewnatrz maina , ktora  :
@@ -21,6 +22,12 @@ public interface WorkLifeBalance {
             System.out.println("S");
         }
     };
+        //Zad.2 What we need to change in interface to write Zad 1 by using Lambdas ?
+        //- write another implementation WorkLifeBalance - by using lambdas this time
+    WorkLifeBalance workLifeBalance1 = () -> { System.out.println("with lambda"); };
+
+    workLifeBalance1.hardWork();
+
     }
 
 
