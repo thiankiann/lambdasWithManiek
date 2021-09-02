@@ -1,6 +1,6 @@
 package calculator;
 
 @FunctionalInterface
-public interface Division {
-    double div( double a , double b);
+public interface Division<T> {
+    T div( T a , T b);
 }

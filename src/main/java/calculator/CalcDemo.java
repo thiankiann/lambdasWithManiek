@@ -6,7 +6,7 @@ public class CalcDemo {
 //Zad 1   -> lambdas adding
         int c = 5;
         int d = 6;
-        Adder adder = (a, b) -> {
+        Adder<Integer> adder = (Integer a, Integer b) -> {   // tu nie trzeba bylo pisac Integer-ow po prawej stronie (w () )- to pokazowka ze jak  juz piszemy to musza byc takie same jak z lewej strony = ( w <> )
             return a + b;
         };
 
@@ -26,7 +26,7 @@ public class CalcDemo {
 
 //Zad3  -> lambdas subtraction
 
-        Subtraction subtraction = (a, b) -> {
+        Subtraction<Integer> subtraction = (a, b) -> {
             return a + b;
         };
 
@@ -34,7 +34,7 @@ public class CalcDemo {
 
 //Zad4  -> lambdas multiplication
 
-        Multiplication multiplication = (a, b) -> {
+        Multiplication<Integer> multiplication = (a, b) -> {
             return a * b;
         };
 
@@ -42,11 +42,14 @@ public class CalcDemo {
 
 //Zad5  -> lambdas division
 
-    Division division = (a, b) -> {
+        Double g = 9.0;
+        Double h = 4.0;
+
+    Division<Double> division = (a, b) -> {
         return a / b;
     };
 
-        System.out.println(" a / b = " + division.div(c,d));
+        System.out.println(" a / b = " + division.div(g,h));
     }
 }
 

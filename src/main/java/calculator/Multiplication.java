@@ -1,6 +1,6 @@
 package calculator;
 
 @FunctionalInterface
-public interface Multiplication {
-    int multi(int a , int b );
+public interface Multiplication<T> {
+    T multi(T a , T b );
 }
