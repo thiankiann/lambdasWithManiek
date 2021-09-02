@@ -1,7 +1,7 @@
 package calculator;
 
 @FunctionalInterface
-public interface Adder {
+public interface Adder<T> {
 
-    int add( int a, int b);
+    T add( T a, T b);
 }
