@@ -14,7 +14,12 @@ public class ExceptionExample {
         }
 
         System.out.println("my nick is " + myNick);
-        String nullString = null;
-        nullString.concat(" ma kota");
+    //    String nullString = null;
+    //    nullString.concat(" ma kota");
+
+        System.out.println("here???");
+
+    myNick = exceptionGenerator.nickWithRuntimeException();
+
     }
 }
