@@ -17,9 +17,19 @@ public class ExceptionExample {
     //    String nullString = null;
     //    nullString.concat(" ma kota");
 
+        System.out.println("with dealer ");
+        NickDealer nickDealer = new NickDealer(new ExceptionGenerator());
         System.out.println("here???");
 
-    myNick = exceptionGenerator.nickWithRuntimeException();
+        try {
+            nickDealer.nickFromDealer();
+        } catch (NoNickException e) {
+            e.printStackTrace();
+        }
+
+        nickDealer.nick();
+
+        myNick = exceptionGenerator.nickWithRuntimeException();
 
     }
 }
