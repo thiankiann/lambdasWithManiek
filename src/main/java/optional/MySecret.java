@@ -1,5 +1,7 @@
 package optional;
 
+import static java.util.Objects.nonNull;
+
 public class MySecret {
     String mySecret ;
 
@@ -32,7 +34,9 @@ public class MySecret {
         //int secretLen = mySecret.getMySecret().length();
 
         int secretLen;
-      secretLen= mySecret.getMySecret() != null ? mySecret.getMySecret().length() : 0;
+      //secretLen= mySecret.getMySecret() != null ? mySecret.getMySecret().length() : 0;  // it's the same as line under
+        secretLen= nonNull(mySecret.getMySecret() )? mySecret.getMySecret().length() : 0; //we used method nonNull() instead != null
+
 /*     the same functionality  than that one line above
        if(mySecret.getMySecret() != null){
             secretLen = mySecret.getMySecret().length();
