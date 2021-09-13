@@ -10,18 +10,6 @@ public class ComputerUtils {
         return computer.getGraphicCard().getModel();
     }
     public static String getGraphicsCardModelGoodApproach(Computer computer){
-       // secretLen= mySecret.getMySecret() != null ? mySecret.getMySecret().length() : 0;
-       // return computer.getGraphicCard().getModel() != null ? computer.getGraphicCard().getModel() : ;
-     /*   Optional opt = Optional.ofNullable(computer.getGraphicCard().getModel());
-
-        Optional unpacked = opt;
-        return unpacked = opt.orElse(null);  */
-        /*if (computer.getGraphicCard() == null ) {
-            return null;
-        } else if (computer.getGraphicCard().getModel() == null){
-            return null;
-        }else
-           return computer.getGraphicCard().getModel();*/
 
         String result = null;
         if(computer != null){
@@ -34,6 +22,12 @@ public class ComputerUtils {
 
         }
         return result;
+    }
+    public static String getGCModelWithJava8(Computer computer) {
+        return Optional.ofNullable(computer)
+                .map(comp -> comp.getGraphicCard())
+                .map(graphicsCard -> graphicsCard.getModel())
+                .orElse("no model");                         // zamienimy computer na karte graficzna lub zamieni na optional.empty()
     }
     public static void main(String[] args) {
 
