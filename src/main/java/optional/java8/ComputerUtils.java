@@ -6,7 +6,8 @@ public class ComputerUtils {
     }
 
     public static String getGraphicsCardModelGoodApproach(Computer computer){
-
+        //FIXME
+      return "";
     }
     public static void main(String[] args) {
 

@@ -7,7 +7,10 @@ public class ComputerUtils {
         throw new UnsupportedOperationException("This  class shouldn't be instantiated "); // sprecyzowana
     }
     public static String getGraphicsCardModelFirstApproach(Computer computer) {
-        return computer.getGraphicCard().getModel();
+       // return computer.getGraphicCard().getModel();
+        return   computer           //Computer
+                .getGraphicCard()   //GraphicCard
+                .getModel();        //String
     }
     public static String getGraphicsCardModelGoodApproach(Computer computer){
 
