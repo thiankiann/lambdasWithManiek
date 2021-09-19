@@ -6,7 +6,7 @@ public class ComputerUtils {
     private ComputerUtils() {
         throw new UnsupportedOperationException("This  class shouldn't be instantiated "); // sprecyzowana
     }
-    public static String getGraphicsCardModelFirstApproach(Computer computer) {
+    public static String getGraphicsCardModelFirstApproach(Computer computer) {  // to rozwiazanie nie jest bezpieczne bo nie zabespiecza przed NPE - w przypadku gdy na ktoryms etapie pojawi sie null
        // return computer.getGraphicCard().getModel();
         return   computer           //Computer
                 .getGraphicCard()   //GraphicCard
