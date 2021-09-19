@@ -11,6 +11,11 @@ Git - good practices
     * develop - bruch developerski
     * feature branch - brunch rowijajacy dana funkcjonalnosc
         * po winien startowac od developa i dno niego finalnie byc mergowanym
+  *  przed mergem bruncha featurowego do jednego z glownych (develop lub master) -
+     najpierw zmerguj glowny  do obecnego (wymuszony commit mergujacy)
+      * pozniej dzieki temu mozemy na glownym branchu mozemy zmergowac za pomoca Fast
+        Forward
+
 * grunch
     *wlasny branch nie musi byc idealny(moze nie dzialac - moze zaiwrac komentarza //FIXMe lub //),
     ale wyslanie merge requesta z tego brancha musi zawierac "piekny kod"
