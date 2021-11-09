@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ListVsArrayDemo {
 
@@ -29,7 +30,7 @@ public class ListVsArrayDemo {
 //Zad 3 sprawdzimy czy mozna dodac element Cat do tabl. Dog
     // hierarchia dziedziczenia: Object -> Animal -> Dog/Cat
 
-    Cat[] cats = {new Cat(), new Cat()};
+    Cat[] cats = {null, new Cat()};
     Dog[] dogs = {new Dog()};
 
     addDog(dogs);
@@ -53,11 +54,47 @@ public class ListVsArrayDemo {
                           //here we can't add new elements
  */
 
+//Zad.5  Napisz metodke ktora przyjemie dowolna tablice zwierzat  i ja wypisze (dowolna - tzn. takze takich zwierzat ktorych jeszcze nie stworzylismy )
+
+    showTabAnimals(cats);
+    showTabAnimals(dogs);
+
+    Animal[] animals = {new Cat(), new Dog()};
+    showTabAnimals(animals);
+
+//Ad.6
+    showTabAnimalStreamVersion(cats);
+    showTabAnimalStreamVersion(dogs);
+    showTabAnimalStreamVersion(animals);
+
+
 }
     public static void addDog(Animal[] animals){  // do Zad 3
         animals[0] = new Dog();  // arrays always remember its type / dlatego jesli przyjdzie tu cokolwiek innego niz tablica psow to sie wykrzaczy (
     }
 
+
+    public static void showTabAnimals(Animal[] animals) { // do Zad 5
+        for (Animal animal : animals) {
+            if(animal != null) {
+                animal.saySomething();
+            }else {
+                System.out.println("Reference ia null");
+            }
+        }
+    }
+    //Zad.6  przepismy sobie metodke showTabAnimals (z zad 5) na streamy
+
+    public static void showTabAnimalStreamVersion(Animal[] animals){
+        Stream.of(animals)           //Arrays.stream(animals) - mozna tak ale wtedy bybly dodatkowy boxing (gorszy performence)
+                .forEach(animal -> {
+                    if(animal != null) {
+                        animal.saySomething();
+                    }else {
+                        System.out.println("Reference ia null");
+                    }
+                });
+    }
     public static void playWithArrays(Object maybeArray) {
         if (maybeArray instanceof int[]) {
             int[] intArray2 = (int[]) maybeArray;
