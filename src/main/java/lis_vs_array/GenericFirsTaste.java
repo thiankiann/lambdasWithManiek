@@ -15,10 +15,22 @@ public class GenericFirsTaste {
     showAnimalList(catList);
     showAnimalList(dogList);
 
+    showAnimalListSetter(animalList);
     }
 
 //Exc.7  Create method which take any List of Animals and will print it Napisz metodke ktora przyjemie dowolna Liste zwierzat  i ja wypisze
-    public static void showAnimalList(List<? extends Animal> animal) {
-        System.out.println(animal);
+    public static void showAnimalList(List<? extends Animal> animals) {
+        System.out.println(animals);
+    }
+
+//Exc.8  uzyjmy metodki get z klaski Animal - zrobimy to : Otwierajac streama na  naszej liscie, a nastepnie zmieniamy nazwe kazdego animala ( najprostrzy przyklad - to samo imie dla kazdego zwierzecia
+    public static void showAnimalListSetter(List<? extends Animal> animals) {
+
+        animals.stream().
+                forEach(animal -> animal.setName("Fifi"));
+
+        System.out.println("Exc. 8");
+        animals.forEach(animal -> System.out.println(animal.getName()));
+       //System.out.println(animals.getName());
     }
 }
