@@ -1,6 +1,7 @@
 package lis_vs_array;
 
 import java.util.List;
+import java.util.Random;
 
 
 public class GenericFirsTaste {
@@ -16,6 +17,7 @@ public class GenericFirsTaste {
     showAnimalList(dogList);
 
     showAnimalListSetter(animalList);
+    showAnimalListSetterRandom(animalList);
     }
 
 //Exc.7  Create method which take any List of Animals and will print it Napisz metodke ktora przyjemie dowolna Liste zwierzat  i ja wypisze
@@ -32,5 +34,20 @@ public class GenericFirsTaste {
         System.out.println("Exc. 8");
         animals.forEach(animal -> System.out.println(animal.getName()));
        //System.out.println(animals.getName());
+    }
+//Exc.9  uzyjmy metodki get z klaski Animal - w tym samym ceu co w exc.8 -ale tak zeby byly ustawiane rozne imiona (random)
+    public static void showAnimalListSetterRandom(List<? extends Animal> animals) {
+
+        List<String> names = List.of("Azor" , "Burek" , "Pimpek" , "Brutus");
+        Random random = new Random();
+    animals.stream().
+            forEach(animal -> animal.setName(names.get(random.nextInt(names.size()))));
+
+        System.out.println("Exc.9");
+
+    animals.stream().
+            forEach(animal -> System.out.println("new name of Animal is : " + animal.getName()));
+
+
     }
 }
