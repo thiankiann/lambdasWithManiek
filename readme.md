@@ -16,9 +16,17 @@ Git - good practices
       * pozniej dzieki temu mozemy na glownym branchu mozemy zmergowac za pomoca Fast
         Forward
 
-* grunch
-    *wlasny branch nie musi byc idealny(moze nie dzialac - moze zaiwrac komentarza //FIXMe lub //),
+* brunch
+    * wlasny branch nie musi byc idealny(moze nie dzialac - moze zaiwrac komentarza //FIXMe lub //),
     ale wyslanie merge requesta z tego brancha musi zawierac "piekny kod"
+    * usowanie brunchy
+      * zmergowany brunch mozna usunac 
+      * nie powinnismy usowac nie zmergowanych brunchy - bo nie bedziemy w stanie do nich wrocic
+      * nie usowamy brunch'a na ktorym obecnie sie znajdujemy 
+    * mergowanie
+        * fast forward nie zawsze jest mozliwy - dziala tylko w przypadku gdy jeden brunch moze "dogonic"
+        * zawsze mozna wymusic commit mergujacy
+        * pull'uj brunche tylko przy czystym drzewie roboczym
 
 Git - przydatne komendy
 * git status
