@@ -1,13 +1,19 @@
 package lis_vs_array;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 
 public class GenericFirsTaste {
     public static void main(String[] args) {
+       // -----------------------------
+        //List<Animal> animalList = List.of(new Animal(), new Cat(), new Dog()); // zadanie 10 mi nie dzialalo - musialem zamienic ta linijke 2ma kolejnymi
 
-        List<Animal> animalList = List.of(new Animal(), new Cat(), new Dog());
+        List<Animal> immutableAnimalList = List.of(new Animal(), new Dog(), new Cat());
+        List<Animal> animalList = new ArrayList<>(immutableAnimalList);
+       // ------------------------------------
         List<Cat> catList = List.of(new Cat(), new Cat());
         List<Dog> dogList = List.of(new Dog());
 
@@ -18,8 +24,16 @@ public class GenericFirsTaste {
 
     showAnimalListSetter(animalList);
     showAnimalListSetterRandom(animalList);
-    }
 
+    //Ad.10 (wywolanie)
+        addElementToAnimalCollection(animalList);
+       //addElementToAnimalCollection(catList);
+       // addElementToAnimalCollection(dogList);
+       //singleton - empty List , parameterized for Object Type (gotowy szablon z biblioteki Javy( z Collections))
+       // List<Object> emptyObjectList = Collections.emptyList();
+       // addElementToAnimalCollection(emptyObjectList);
+
+    }
 //Exc.7  Create method which take any List of Animals and will print it Napisz metodke ktora przyjemie dowolna Liste zwierzat  i ja wypisze
     public static void showAnimalList(List<? extends Animal> animals) {
         System.out.println(animals);
@@ -49,5 +63,20 @@ public class GenericFirsTaste {
             forEach(animal -> System.out.println("new name of Animal is : " + animal.getName()));
 
 
+    }
+// Exc.10  Create method which will add new elements to a list  in a safe way (use wildcards) for a supertypes l ( f.e. Object
+  /*  public static void addElementToAnimalCollection(List <? super  Animal> animals) {
+    //   animals.add(new Dog());
+     //  animals.add(new Cat());
+      // animals.add(new Animal());
+
+    } */
+    // add
+    // safe adding
+    // call with any supertype of Animal and Animal
+    public static void addElementToAnimalCollection(List<? super Animal> animals) {
+        animals.add(new Dog());
+        animals.add(new Cat());
+        animals.add(new Animal());
     }
 }
