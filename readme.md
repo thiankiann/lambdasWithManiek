@@ -31,9 +31,14 @@ Git - good practices
 Git - przydatne komendy
 * git status
 * git add .
+* git file-name  // dodaje plik do stage
+* git file-name1 file-name2
+* git restore --staged file-name // zdejmij ze stage'a  
 * git commit -m "[tag] - message"
-* git restore --staged file-name // zdejmij ze stage'a
 * git checkout branch-name // przełącz się na branch-name
 * git checkout -b branch-name // przełącz na nowo utworzony branch
 * git reflog - Reflog is a mechanism to record when the tip of branches are updated. This command is to manage the information recorded in it. Basically every action you perform inside of Git where data is stored, you can find it inside of the reflog
-* git log --graph  //rysujegraf historii w konsoli 
+* git log --graph  //rysuje graf historii w konsoli 
+* git branch -a // pokaz wszystkie branch'e
+* git fetch // aktualizuje metadane o zdalnych repozytoriach
+* git brahch -d feature/animal-mp - usuwa zmergowany branch 
